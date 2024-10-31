@@ -242,6 +242,8 @@ def cbc_decrypt(ciphertext, key, iv):
     return plaintext
 
 # 中间相遇攻击
+
+# 中间相遇攻击
 def meet_in_the_middle_attack(plaintext_attack, ciphertext_attack):
     plaintext_bits = text_to_bits(plaintext_attack).ljust(16, '0')
     ciphertext_bits = text_to_bits(ciphertext_attack).ljust(16, '0')
