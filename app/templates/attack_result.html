@@ -1,0 +1,20 @@
+<!-- /app/templates/attack_result.html -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>攻击结果</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>攻击结果</h1>
+    <p>可能的密钥：</p>
+    <ul>
+        {% for key in keys %}
+            <li>{{ key }}</li>
+        {% endfor %}
+    </ul>
+    <p>破解耗时：{{ time }} 秒</p>
+    <a href="{{ url_for('attack') }}">返回攻击页面</a>
+</body>
+</html>
