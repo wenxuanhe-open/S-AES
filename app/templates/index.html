@@ -1,0 +1,30 @@
+<!-- /app/templates/index.html -->
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>S-AES 加密与解密</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>S-AES 加密与解密</h1>
+    <form action="{{ url_for('process') }}" method="post">
+        <label for="plaintext">明文（4个十六进制数字）：</label>
+        <input type="text" id="plaintext" name="plaintext" maxlength="4" required pattern="[0-9A-Fa-f]{4}">
+
+        <label for="key">密钥（4个十六进制数字）：</label>
+        <input type="text" id="key" name="key" maxlength="4" required pattern="[0-9A-Fa-f]{4}">
+
+        <label>操作：</label>
+        <div>
+            <input type="radio" id="encrypt" name="operation" value="encrypt" checked>
+            <label for="encrypt">加密</label>
+
+            <input type="radio" id="decrypt" name="operation" value="decrypt">
+            <label for="decrypt">解密</label>
+        </div>
+
+        <button type="submit">提交</button>
+    </form>
+</body>
+</html>
